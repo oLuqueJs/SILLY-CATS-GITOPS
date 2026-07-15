@@ -1,0 +1,8 @@
+# IDEs
+.idea
+.vscode
+
+# Local
+.DS_Store
+*.iml
+out
