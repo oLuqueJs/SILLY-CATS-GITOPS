@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: silly-cats
+  namespace: silly-cats-ns
+  labels:
+    app: silly-cats
+    environment: prod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: silly-cats
+  template:
+    metadata:
+      labels:
+        app: silly-cats
+        environment: prod
+    spec:
+      containers:
+      - name: silly-cats
+        image: ghcr.io/oluquejs/silly-cats:1.0.0
+        ports:
+        - containerPort: 8080
