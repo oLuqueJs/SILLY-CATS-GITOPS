@@ -21,4 +21,5 @@ spec:
       - name: silly-cats
         image: ghcr.io/oluquejs/silly-cats:1.0.0
         ports:
-        - containerPort: 8080
+        - name: http-app
+          containerPort: 8080
