@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: silly-cats
-        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}@{{ .Values.image.digest }}"
         imagePullPolicy: IfNotPresent
         ports:
         - name: http-app
