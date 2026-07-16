@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: silly-cats
-  namespace: silly-cats-ns
+  name: {{ .Release.Name }}
   labels:
-    app: silly-cats
-    environment: prod
+    app: {{ .Release.Name }}
+    environment: {{ .Values.environment }}
 spec:
-  replicas: 1
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: silly-cats
+      app: {{ .Release.Name }}
   template:
     metadata:
       labels:
-        app: silly-cats
+        app: {{ .Release.Name }}
         environment: prod
     spec:
       containers:
       - name: silly-cats
-        image: ghcr.io/oluquejs/silly-cats:1.0.0
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: IfNotPresent
         ports:
         - name: http-app
           containerPort: 8080
@@ -37,8 +37,8 @@ spec:
           periodSeconds: 10
         resources:
           requests:
-            cpu: 10m
-            memory: 32Mi
+            cpu: {{ .Values.resources.requests.cpu }}
+            memory: {{ .Values.resources.requests.memory }}
           limits:
-            cpu: 100m
-            memory: 64Mi
+            cpu: {{ .Values.resources.limits.cpu }}
+            memory: {{ .Values.resources.limits.memory }}
