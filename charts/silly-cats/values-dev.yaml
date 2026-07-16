@@ -5,3 +5,6 @@ image:
 
 ingress:
   host: dev.desafio.bonam.cc
+  tls:
+    enabled: false #! temp
+    secretName: silly-cats-dev-tls

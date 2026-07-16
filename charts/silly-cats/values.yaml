@@ -9,6 +9,10 @@ image:
 
 ingress:
   host: desafio.bonam.cc
+  tls:
+    enabled: false
+    clusterIssuer: letsencrypt-prod
+    secretName: silly-cats-tls
 
 resources:
   requests:

@@ -7,6 +7,9 @@ image:
 
 ingress:
   host: desafio.bonam.cc
+  tls:
+    enabled: true
+    secretName: silly-cats-prod-tls
 
 resources:
   requests:
