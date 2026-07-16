@@ -1,0 +1,28 @@
+environment: prod
+
+replicaCount: 2
+
+image:
+  digest: "sha256:22ae1f7a7d81b4983b0c5156df62c4af6c7f7d163ba349bdfc5cae167fb32a27"
+
+ingress:
+  host: desafio.bonam.cc
+  tls:
+    enabled: true
+    secretName: silly-cats-prod-tls
+
+resources:
+  requests:
+    cpu: 25m
+    memory: 64Mi
+  limits:
+    cpu: 200m
+    memory: 128Mi
+
+readinessProbe:
+  initialDelaySeconds: 5
+  periodSeconds: 10
+
+livenessProbe:
+  initialDelaySeconds: 15
+  periodSeconds: 15
