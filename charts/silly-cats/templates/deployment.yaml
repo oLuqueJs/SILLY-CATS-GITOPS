@@ -14,7 +14,7 @@ spec:
     metadata:
       labels:
         app: {{ .Release.Name }}
-        environment: prod
+        environment: {{ .Values.environment }}
     spec:
       containers:
       - name: silly-cats
