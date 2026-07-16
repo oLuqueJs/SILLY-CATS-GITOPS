@@ -17,3 +17,11 @@ resources:
   limits:
     cpu: 100m
     memory: 64Mi
+
+readinessProbe:
+  initialDelaySeconds: 2
+  periodSeconds: 5
+
+livenessProbe:
+  initialDelaySeconds: 10
+  periodSeconds: 10

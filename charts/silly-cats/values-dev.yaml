@@ -1,0 +1,7 @@
+environment: dev
+
+image:
+  digest: "sha256:22ae1f7a7d81b4983b0c5156df62c4af6c7f7d163ba349bdfc5cae167fb32a27"
+
+ingress:
+  host: dev.desafio.bonam.cc
