@@ -1,0 +1,4 @@
+environment: local
+
+ingress:
+  host: silly-cats.k8s.orb.local
