@@ -1,0 +1,20 @@
+Silly Cats deployed successfully!
+
+Release:     {{ .Release.Name }}
+Namespace:   {{ .Release.Namespace }}
+Environment: {{ .Values.environment }}
+
+URL:
+  {{ if .Values.ingress.tls.enabled }}https{{ else }}http{{ end }}://{{ .Values.ingress.host }}
+
+Status:
+  helm status {{ .Release.Name }} --namespace {{ .Release.Namespace }}
+
+Resources:
+  kubectl get pods,svc,ingress --namespace {{ .Release.Namespace }}
+
+Rollout:
+  kubectl rollout status deployment/{{ .Release.Name }} --namespace {{ .Release.Namespace }}
+
+Logs:
+  kubectl logs deployment/{{ .Release.Name }} --namespace {{ .Release.Namespace }} --follow
