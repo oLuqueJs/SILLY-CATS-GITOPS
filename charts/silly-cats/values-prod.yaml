@@ -9,6 +9,7 @@ ingress:
   host: desafio.bonam.cc
   tls:
     enabled: true
+    clusterIssuer: letsencrypt-prod
     secretName: silly-cats-prod-tls
 
 resources:
