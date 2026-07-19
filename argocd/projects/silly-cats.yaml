@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: silly-cats
+  namespace: argocd
+spec:
+  description: Silly Cats application
+  sourceRepos:
+    - https://github.com/oLuqueJs/SILLY-CATS-GITOPS.git
+  destinations:
+    - server: https://kubernetes.default.svc
+      namespace: silly-cats-prod
+
+  clusterResourceWhitelist: []
+
+  namespaceResourceWhitelist:
+    - group: apps
+      kind: Deployment
+    - group: ""
+      kind: Service
+    - group: networking.k8s.io
+      kind: Ingress
