@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Namespace
+
+metadata:
+  name: silly-cats-dev
+
+  labels:
+    app.kubernetes.io/part-of: silly-cats
+    environment: dev
