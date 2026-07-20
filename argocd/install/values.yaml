@@ -1,6 +1,11 @@
 configs:
+  cm:
+    url: "https://desafio.bonam.cc/argocd"
+
   params:
     server.insecure: "true"
+    server.rootpath: "/argocd"
+    server.basehref: "/argocd"
 
 server:
   ingress:
