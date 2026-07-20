@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: silly-cats-dev
+  namespace: argocd
+spec:
+  project: silly-cats
+
+  source:
+    repoURL: https://github.com/oLuqueJs/SILLY-CATS-GITOPS.git
+    targetRevision: main
+    path: charts/silly-cats
+    helm:
+      releaseName: silly-cats-dev
+      valueFiles:
+        - values-dev.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: silly-cats-dev

@@ -10,6 +10,8 @@ spec:
   destinations:
     - server: https://kubernetes.default.svc
       namespace: silly-cats-prod
+    - server: https://kubernetes.default.svc
+      namespace: silly-cats-dev
 
   clusterResourceWhitelist: []
 
