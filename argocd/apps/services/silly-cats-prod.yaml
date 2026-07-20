@@ -18,3 +18,8 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: silly-cats-prod
+
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
