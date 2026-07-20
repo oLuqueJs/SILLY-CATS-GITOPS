@@ -37,3 +37,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: portainer
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
