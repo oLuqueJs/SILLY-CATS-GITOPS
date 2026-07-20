@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: cert-manager
+  namespace: argocd
+spec:
+  description: cert-manager and cert issuers of cluster
+  sourceRepos:
+    - https://charts.jetstack.io
+    - https://github.com/oLuqueJs/SILLY-CATS-GITOPS.git
+  destinations:
+    - server: https://kubernetes.default.svc
+      namespace: cert-manager
+  clusterResourceWhitelist:
+    - group: "*"
+      kind: "*"
+  namespaceResourceWhitelist:
+    - group: "*"
+      kind: "*"
