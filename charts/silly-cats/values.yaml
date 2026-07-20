@@ -4,7 +4,7 @@ replicaCount: 1
 
 image:
   repository: ghcr.io/oluquejs/silly-cats
-  tag: "1.0.1"
+  tag: "1.1.0"
   digest: ""
 
 ingress:

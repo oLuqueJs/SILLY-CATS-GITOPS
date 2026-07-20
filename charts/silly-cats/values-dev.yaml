@@ -1,7 +1,7 @@
 environment: dev
 
 image:
-  digest: "sha256:52721af8a7597e14f04ef885d8496a595b1355e31e18fab96050d952b361b123"
+  digest: "sha256:8a6ca52ba1515e5230ed41135bc13493b9816f334ce6f6e012449def24015d9f"
 
 ingress:
   enabled: true
