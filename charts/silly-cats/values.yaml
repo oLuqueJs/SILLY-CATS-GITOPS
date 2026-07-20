@@ -10,7 +10,7 @@ image:
 ingress:
   host: desafio.bonam.cc
   tls:
-    enabled: false
+    enabled: true
     clusterIssuer: letsencrypt-staging
     secretName: silly-cats-tls
 
