@@ -24,6 +24,14 @@ spec:
         tls:
           force: false
 
+        trusted_origins:
+          enabled: true
+          domains: desafio.bonam.cc
+
+        feature:
+          flags:
+            - --base-url=/portainer
+
         ingress:
           enabled: false
 
