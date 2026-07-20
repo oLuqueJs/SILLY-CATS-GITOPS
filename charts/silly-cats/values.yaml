@@ -8,7 +8,15 @@ image:
   digest: ""
 
 ingress:
+  enabled: true
   host: desafio.bonam.cc
+  path: /
+
+  stripPrefix:
+    enabled: false
+    name: strip-prefix
+    prefixes: []
+
   tls:
     enabled: true
     clusterIssuer: letsencrypt-staging
