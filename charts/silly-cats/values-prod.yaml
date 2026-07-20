@@ -1,6 +1,6 @@
 environment: prod
 
-replicaCount: 3
+replicaCount: 2
 
 image:
   digest: "sha256:52721af8a7597e14f04ef885d8496a595b1355e31e18fab96050d952b361b123"
