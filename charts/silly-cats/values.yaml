@@ -8,9 +8,17 @@ image:
   digest: ""
 
 ingress:
+  enabled: true
   host: desafio.bonam.cc
-  tls:
+  path: /
+
+  stripPrefix:
     enabled: false
+    name: strip-prefix
+    prefixes: []
+
+  tls:
+    enabled: true
     clusterIssuer: letsencrypt-staging
     secretName: silly-cats-tls
 

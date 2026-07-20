@@ -1,0 +1,10 @@
+{{- if and .Values.ingress.enabled .Values.ingress.stripPrefix.enabled }}
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: {{ .Values.ingress.stripPrefix.name | quote }}
+spec:
+  stripPrefix:
+    prefixes:
+{{ toYaml .Values.ingress.stripPrefix.prefixes | indent 6 }}
+{{- end }}
