@@ -1,0 +1,39 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: portainer
+  namespace: argocd
+spec:
+  project: portainer
+  source:
+    repoURL: https://portainer.github.io/k8s/
+    chart: portainer
+    targetRevision: "239.5.0"
+    helm:
+      releaseName: portainer
+      values: |
+        enterpriseEdition:
+          enabled: false
+
+        localMgmt: true
+
+        service:
+          type: ClusterIP
+          httpPort: 9000
+
+        tls:
+          force: false
+
+        ingress:
+          enabled: false
+
+        persistence:
+          enabled: true
+          size: 5Gi
+
+        adminPassword:
+          existingSecret: portainer-admin-password
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: portainer
