@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: cluster-infra
+  namespace: argocd
+spec:
+  description: Cluster shared resources
+  sourceRepos:
+    - https://github.com/oLuqueJs/SILLY-CATS-GITOPS.git
+  destinations:
+    - server: https://kubernetes.default.svc
+      namespace: argocd
+    - server: https://kubernetes.default.svc
+      namespace: cert-manager
+    - server: https://kubernetes.default.svc
+      namespace: portainer
+    - server: https://kubernetes.default.svc
+      namespace: silly-cats-prod
+    - server: https://kubernetes.default.svc
+      namespace: silly-cats-dev
+  clusterResourceWhitelist:
+    - group: ""
+      kind: Namespace
+    - group: cert-manager.io
+      kind: ClusterIssuer
+  namespaceResourceWhitelist:
+    - group: networking.k8s.io
+      kind: Ingress
+    - group: traefik.io
+      kind: Middleware
